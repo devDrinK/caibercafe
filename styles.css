@@ -786,3 +786,32 @@ img[loading="lazy"].ls-is-cached,
 img[loading="lazy"]:not([src=""]) {
   opacity: 1;
 }
+/* BOTÓN INSTALAR PWA */
+.btn-instalar-pwa {
+  background: var(--gradient-theme);
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-instalar-pwa:hover {
+  box-shadow: 0 0 14px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .btn-instalar-pwa {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}

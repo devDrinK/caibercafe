@@ -11,6 +11,38 @@ $(document).ready(function() {
     'pc': '#ff0055'
   };
 
+    // PWA: CAPTURAR EVENTO DE INSTALACIÓN
+  let deferredPrompt;
+  const btnInstalar = $('#btn-instalar-pwa');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    btnInstalar.fadeIn(300);
+  });
+
+  btnInstalar.on('click', async () => {
+    if (!deferredPrompt) return;
+    
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    
+    if (outcome === 'accepted') {
+      console.log('PWA instalada');
+      btnInstalar.fadeOut(300);
+    } else {
+      console.log('Usuario canceló instalación');
+    }
+    
+    deferredPrompt = null;
+  });
+
+  // Ocultar botón si ya está instalada
+  window.addEventListener('appinstalled', () => {
+    btnInstalar.fadeOut(300);
+    deferredPrompt = null;
+  });
+
   // 1. CARGA DE DATOS CON AJAX
   $.ajax({
     url: 'data.json',
