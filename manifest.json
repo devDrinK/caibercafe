@@ -2,21 +2,23 @@
   "name": "Pa Que Juegues Gaming Center",
   "short_name": "PaQueJuegues",
   "description": "Reserva tu plataforma gaming y vive la máxima inmersión.",
-  "start_url": "/",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#07070a",
   "theme_color": "#0072ce",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "icons": [
     {
-      "src": "icons/icon-192x192.png",
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='40' fill='%230072ce'/><path fill='white' d='M60 80h20v20H60zm52 0h20v20h-20zm-36 30h40v20H76z'/></svg>",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/svg+xml",
+      "purpose": "any"
     },
     {
-      "src": "icons/icon-512x512.png",
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%230072ce'/><path fill='white' d='M160 210h50v50h-50zm142 0h50v50h-50zm-96 80h100v50H206z'/></svg>",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ]
