@@ -1,0 +1,117 @@
+{
+  "platformData": {
+    "ps5": {
+      "title": "Zona PlayStation 5",
+      "description": "Experimenta la máxima inmersión con audio 3D, retroalimentación háptica DualSense y pantallas 4K HDR de 55 pulgadas.",
+      "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=800&q=80",
+      "defaultPlanIndex": 0,
+      "cards": [
+        { "name": "Spider-Man 2", "console": "PS5", "img": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=500&q=80", "desc": "Aventura de mundo abierto a alta velocidad." },
+        { "name": "God of War Ragnarök", "console": "PS5", "img": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80", "desc": "Acción mitológica en 4K." },
+        { "name": "Gran Turismo 7", "console": "PS5", "img": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=500&q=80", "desc": "Simulador con gatillos adaptativos." },
+        { "name": "The Last of Us II", "console": "PS5", "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80", "desc": "Supervivencia dramática en 60 FPS." },
+        { "name": "Demon's Souls", "console": "PS5", "img": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=500&q=80", "desc": "Fantasía oscura en alta resolución." },
+        { "name": "FC 24 (FIFA)", "console": "PS5", "img": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=500&q=80", "desc": "Fútbol competitivo en coop local." },
+        { "name": "Horizon Forbidden West", "console": "PS5", "img": "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?auto=format&fit=crop&w=500&q=80", "desc": "Mundo abierto postapocalíptico fascinante." },
+        { "name": "Tekken 8", "console": "PS5", "img": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=500&q=80", "desc": "Peleas de nueva generación en versus local." },
+        { "name": "Mortal Kombat 1", "console": "PS5", "img": "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=500&q=80", "desc": "Combates sangrientos y modo cooperativo." }
+      ]
+    },
+    "xbox": {
+      "title": "Zona Xbox Series X",
+      "description": "Potencia pura de 12 Teraflops con Game Pass Ultimate y respuesta rápida a 120 FPS.",
+      "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=800&q=80",
+      "defaultPlanIndex": 0,
+      "cards": [
+        { "name": "Halo Infinite", "console": "XBOX", "img": "https://images.unsplash.com/photo-1612287233202-b51b36619dfc?auto=format&fit=crop&w=500&q=80", "desc": "Multijugador y campaña legendaria." },
+        { "name": "Forza Horizon 5", "console": "XBOX", "img": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80", "desc": "Mundo abierto automovilístico." },
+        { "name": "Starfield", "console": "XBOX", "img": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=500&q=80", "desc": "RPG de exploración espacial." },
+        { "name": "Gears 5", "console": "XBOX", "img": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=500&q=80", "desc": "Acción táctica en tercera persona." },
+        { "name": "Forza Motorsport", "console": "XBOX", "img": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=500&q=80", "desc": "Simulación de carreras." },
+        { "name": "Sea of Thieves", "console": "XBOX", "img": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80", "desc": "Aventura pirata en multijugador." },
+        { "name": "Hi-Fi RUSH", "console": "XBOX", "img": "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=500&q=80", "desc": "Acción rítmica frenética a 120 FPS." },
+        { "name": "Minecraft Dungeons", "console": "XBOX", "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80", "desc": "Mazmorras y cooperativo para 4 jugadores." },
+        { "name": "Resident Evil 4", "console": "XBOX", "img": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80", "desc": "Terror y supervivencia renovado en 4K." }
+      ]
+    },
+    "pc": {
+      "title": "Zona PC Gamer Ultra",
+      "description": "Equipos competitivos eSports con RTX 4080, procesadores i9 y monitores de 240Hz.",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80",
+      "defaultPlanIndex": 1,
+      "cards": [
+        { "name": "Valorant", "console": "PC", "img": "https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=500&q=80", "desc": "Shooter táctico a 240 FPS." },
+        { "name": "Counter-Strike 2", "console": "PC", "img": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=500&q=80", "desc": "Competitivo de latencia ultra baja." },
+        { "name": "League of Legends", "console": "PC", "img": "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=500&q=80", "desc": "MOBA con rendimiento fluido." },
+        { "name": "Cyberpunk 2077", "console": "PC", "img": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80", "desc": "Ray Tracing y Path Tracing activo." },
+        { "name": "Apex Legends", "console": "PC", "img": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=500&q=80", "desc": "Battle Royale de ritmo acelerado." },
+        { "name": "Dota 2", "console": "PC", "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80", "desc": "Estrategia profunda para LAN." },
+        { "name": "Overwatch 2", "console": "PC", "img": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=500&q=80", "desc": "Hero shooter por equipos a alta tasa de refresco." },
+        { "name": "Fortnite", "console": "PC", "img": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=500&q=80", "desc": "Battle Royale con Unreal Engine 5." },
+        { "name": "Call of Duty: Warzone", "console": "PC", "img": "https://images.unsplash.com/photo-1612287233202-b51b36619dfc?auto=format&fit=crop&w=500&q=80", "desc": "Acción multijugador táctica militar." }
+      ]
+    }
+  },
+  "plansByCapacity": {
+    "individual": {
+      "ps5": [
+        { "name": "PS5 Standard Individual", "label": "PS5 Standard", "price": 3.50, "fixed": false },
+        { "name": "PS5 VIP 4K OLED Individual", "label": "PS5 VIP 4K", "price": 4.50, "fixed": false },
+        { "name": "PS5 Pack Nocturno Individual", "label": "Pack Nocturno", "price": 15.00, "fixed": true },
+        { "name": "PS5 Pase 4 Horas Individual", "label": "Pase 4 Horas", "price": 12.00, "fixed": true }
+      ],
+      "xbox": [
+        { "name": "Xbox Series X Standard", "label": "Xbox Standard", "price": 3.50, "fixed": false },
+        { "name": "Xbox Game Pass Ultimate", "label": "Xbox Ultimate", "price": 4.50, "fixed": false },
+        { "name": "Xbox Pack Nocturno Individual", "label": "Pack Nocturno", "price": 15.00, "fixed": true },
+        { "name": "Xbox Pase 4 Horas Individual", "label": "Pase 4 Horas", "price": 12.00, "fixed": true }
+      ],
+      "pc": [
+        { "name": "PC Gamer Pro (RTX 4070)", "label": "PC Pro RTX 4070", "price": 4.00, "fixed": false },
+        { "name": "PC Gamer Ultra (RTX 4080)", "label": "PC Ultra RTX 4080", "price": 5.50, "fixed": false },
+        { "name": "PC Pack Nocturno Individual", "label": "Pack Nocturno PC", "price": 18.00, "fixed": true },
+        { "name": "PC Pase 5 Horas eSports", "label": "Pase 5H eSports", "price": 18.50, "fixed": true }
+      ]
+    },
+    "duo": {
+      "ps5": [
+        { "name": "PS5 Dúo Co-op (2 Mandos)", "label": "Dúo 2 Mandos", "price": 5.50, "fixed": false },
+        { "name": "PS5 Dúo Pantallas Dobles", "label": "Dúo Pantalla Doble", "price": 6.50, "fixed": false },
+        { "name": "PS5 Pack Nocturno Dúo", "label": "Nocturno Dúo", "price": 24.00, "fixed": true },
+        { "name": "PS5 Dúo Torneo 3 Horas", "label": "Pase Dúo 3 Horas", "price": 15.00, "fixed": true }
+      ],
+      "xbox": [
+        { "name": "Xbox Dúo Co-op (2 Mandos)", "label": "Xbox Dúo Co-op", "price": 5.50, "fixed": false },
+        { "name": "Xbox Dúo Pantallas Dobles", "label": "Xbox Doble Pantalla", "price": 6.50, "fixed": false },
+        { "name": "Xbox Pack Nocturno Dúo", "label": "Nocturno Dúo", "price": 24.00, "fixed": true },
+        { "name": "Xbox Dúo Batalla 3 Horas", "label": "Pase Dúo 3 Horas", "price": 15.00, "fixed": true }
+      ],
+      "pc": [
+        { "name": "PC Dúo Competitivo (2 Equipos)", "label": "PC Dúo 2 Equipos", "price": 7.50, "fixed": false },
+        { "name": "PC Dúo Ultra RTX 4080", "label": "PC Dúo RTX 4080", "price": 9.50, "fixed": false },
+        { "name": "PC Dúo Pack Nocturno", "label": "Nocturno PC Dúo", "price": 28.00, "fixed": true },
+        { "name": "PC Dúo Maratón Rankeds (4h)", "label": "Dúo 4H Rankeds", "price": 26.00, "fixed": true }
+      ]
+    },
+    "escuadron": {
+      "ps5": [
+        { "name": "PS5 Cuarteto Co-op (4 Mandos)", "label": "Cuarteto (4 Mandos)", "price": 8.50, "fixed": false },
+        { "name": "PS5 Mini-Sala Privada VIP", "label": "Sala VIP Completa", "price": 12.00, "fixed": false },
+        { "name": "PS5 Pack Nocturno Escuadrón", "label": "Nocturno Escuadrón", "price": 38.00, "fixed": true },
+        { "name": "PS5 Torneo Comunitario (4h)", "label": "Pase Torneo 4 Horas", "price": 30.00, "fixed": true }
+      ],
+      "xbox": [
+        { "name": "Xbox Escuadrón 4 Jugadores", "label": "Xbox Squad (4 Mandos)", "price": 8.50, "fixed": false },
+        { "name": "Xbox Cabina Fiesta Privada", "label": "Cabina Privada", "price": 11.50, "fixed": false },
+        { "name": "Xbox Pack Nocturno Escuadrón", "label": "Nocturno Escuadrón", "price": 38.00, "fixed": true },
+        { "name": "Xbox Torneo LAN 4 Horas", "label": "Torneo Squad 4H", "price": 30.00, "fixed": true }
+      ],
+      "pc": [
+        { "name": "PC Cabina LAN Completa (4-6 PCs)", "label": "Cabina LAN (4-6 PCs)", "price": 14.00, "fixed": false },
+        { "name": "PC Escuadrón eSports Pro", "label": "Escuadrón eSports", "price": 18.00, "fixed": false },
+        { "name": "PC Pack Nocturno LAN Party", "label": "Nocturno LAN Party", "price": 55.00, "fixed": true },
+        { "name": "PC Pase Maratón LAN (6h)", "label": "Maratón LAN (6h)", "price": 65.00, "fixed": true }
+      ]
+    }
+  }
+        }
