@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pa Que Juegues Gaming Center - Terminal Única</title>
+  
+  <!-- PWA: Meta etiquetas esenciales -->
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Pa Que Juegues Gaming Center - Reserva tu plataforma y juega al máximo.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="theme-ps5">
+
+  <div class="background-overlay"></div>
+
+  <!-- TOAST ALERT (RETO UI PRO) -->
+  <div id="toast-alert" class="toast-alert">
+    <i class="fa-solid fa-circle-check"></i> <span id="toast-text">¡Reserva procesada con éxito!</span>
+  </div>
+
+  <!-- NAVBAR / BARRA SUPERIOR UI (#1) -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-gamepad"></i> PA QUE<span>JUEGUES</span>
+    </div>
+    <!-- Botón Hamburguesa para Móvil -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <!-- Pestañas de Navegación de Pantalla Única -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#" class="nav-tab active" data-target="view-inicio">Inicio</a></li>
+      <li><a href="#" class="nav-tab" data-target="view-catalogo">Catálogo</a></li>
+      <li><a href="#" class="nav-tab" data-target="view-terminal">Terminal de Reserva</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span> <span>Online</span>
+    </div>
+  </nav>
+
+  <!-- PANEL LATERAL IZQUIERDO: BOTONES DE TEMA / PLATAFORMA -->
+  <aside class="sidebar-themes" id="plataformas">
+    <span class="sidebar-title">PLATAFORMAS</span>
+    <button class="btn-theme active" data-theme="theme-ps5" data-platform="ps5">
+      <i class="fa-brands fa-playstation"></i> PS5
+    </button>
+    <button class="btn-theme" data-theme="theme-xbox" data-platform="xbox">
+      <i class="fa-brands fa-xbox"></i> XBOX
+    </button>
+    <button class="btn-theme" data-theme="theme-pc" data-platform="pc">
+      <i class="fa-solid fa-desktop"></i> PC GAMER
+    </button>
+  </aside>
+
+  <!-- CONTENEDOR PRINCIPAL DE PANTALLA ÚNICA (SIN SCROLL) -->
+  <main class="viewport-container">
+
+    <!-- PANTALLA 1: INICIO (IMAGEN DE LA CONSOLA Y DESCRIPCIÓN) -->
+    <section id="view-inicio" class="app-view active">
+      <div class="hero-box-single">
+        <div class="hero-info">
+          <span class="badge">ZONA VIP GAMER</span>
+          <h1 id="hero-title">Zona PlayStation 5</h1>
+          <p id="hero-description">
+            Experimenta la máxima inmersión con audio 3D, retroalimentación háptica DualSense y pantallas 4K HDR de 55
+            pulgadas.
+          </p>
+          <button class="btn-submit btn-goto" data-target="view-terminal">Ir a Reservar Ahora</button>
+        </div>
+        <div class="hero-image-frame">
+          <!-- LAZY LOADING AGREGADO: loading="lazy" y decoding="async" -->
+          <img id="featured-img"
+            src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=800&q=80"
+            alt="Consola Destacada" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: CATÁLOGO EN CARRUSEL COMPACTO -->
+    <section id="view-catalogo" class="app-view">
+      <div class="section-container-single">
+        <div class="catalog-header">
+          <h2><i class="fa-solid fa-gamepad"></i> Catálogo de Juegos Incluidos</h2>
+          <span class="header-subtitle">Juegos precargados y listos para jugar al reservar la plataforma</span>
+        </div>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="carousel-track-container">
+            <div id="games-carousel" class="carousel-track">
+              <!-- Inyectado por jQuery (Nota: agregar loading="lazy" aquí también cuando se inyecten las imágenes desde JS) -->
+            </div>
+          </div>
+          <button class="carousel-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: TERMINAL DE RESERVA INTEGRADA -->
+    <section id="view-terminal" class="app-view">
+      <div class="dashboard-grid-single">
+
+        <!-- COLUMNA IZQUIERDA: FORMULARIO + TARIFAS + AFORO + SNACKS -->
+        <div class="ui-box">
+          <h3><i class="fa-solid fa-user-gear"></i> Configuración de Reserva</h3>
+          <form id="calc-form">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="input-nombre"><i class="fa-solid fa-user"></i> Jugador</label>
+                <input type="text" id="input-nombre" class="form-input" placeholder="Nombre o Gamertag" required>
+              </div>
+              <div class="form-group" id="group-horas">
+                <label for="input-horas"><i class="fa-solid fa-clock"></i> Horas</label>
+                <input type="number" id="input-horas" class="form-input" value="2" min="1" max="12">
+              </div>
+            </div>
+
+            <!-- TARIFAS Y PLANES -->
+            <div class="form-group">
+              <label>Plan de Tarifa</label>
+              <div class="plan-cards-selector" id="plan-cards-container">
+                <!-- Se actualiza dinámicamente según la plataforma y aforo -->
+              </div>
+            </div>
+
+            <!-- AFORO -->
+            <div class="form-group">
+              <label>Capacidad / Aforo</label>
+              <div class="aforo-selector">
+                <button type="button" class="btn-aforo active" data-capacity-key="individual"
+                  data-capacity="1 Persona (Individual)">Individual (1p)</button>
+                <button type="button" class="btn-aforo" data-capacity-key="duo"
+                  data-capacity="2 Personas (Dúo Co-op)">Dúo Co-op (2p)</button>
+                <button type="button" class="btn-aforo" data-capacity-key="escuadron"
+                  data-capacity="4-6 Personas (Escuadrón LAN)">Escuadrón (4-6p)</button>
+              </div>
+            </div>
+
+            <!-- PANEL DE SNACKS -->
+            <div class="form-group snack-panel">
+              <label><i class="fa-solid fa-burger"></i> Combos & Snacks</label>
+              <div class="snack-options">
+                <label><input type="checkbox" class="snack-chk" value="3.00" data-name="Combo 1 (Hot Dog + Soda)"> Hot
+                  Dog + Soda [$3.00]</label>
+                <label><input type="checkbox" class="snack-chk" value="5.00" data-name="Combo 2 (Burger + Energizante)">
+                  Burger + Energizante [$5.00]</label>
+                <label><input type="checkbox" class="snack-chk" value="7.50" data-name="Combo 3 (Pizza + 2 Bebidas)">
+                  Pizza + 2 Bebidas [$7.50]</label>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- COLUMNA DERECHA: RESUMEN Y PAGO -->
+        <div class="ui-box summary-box">
+          <div class="summary-top">
+            <h3><i class="fa-solid fa-receipt"></i> Resumen en Vivo</h3>
+            <div id="resumen-content" class="resumen-content"></div>
+          </div>
+
+          <div>
+            <div class="total-preview">
+              <span>Total Estimado:</span>
+              <strong id="live-total">$7.00 USD / BOB</strong>
+            </div>
+            <button type="button" id="btn-abrir-modal" class="btn-submit">
+              CONFIRMAR Y PAGAR <i class="fa-solid fa-bolt"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL UI CON CRONÓMETRO DE 30s -->
+  <div id="modal-confirmacion" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header-modal">
+        <h3>Confirmar Transacción - CyberZone</h3>
+        <button id="btn-cerrar-x" class="btn-x">[X]</button>
+      </div>
+      <div class="modal-body">
+        <p>Verifique el detalle de su transacción antes de procesar el registro:</p>
+        <div id="modal-detalle-texto" class="modal-detalle-box"></div>
+        <div class="timer-box">
+          <span>Tiempo Restante para Confirmar:</span> <strong id="countdown-timer">00:30s</strong>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-modal-cancelar" class="btn-secondary">Cancelar</button>
+        <button id="btn-modal-procesar" class="btn-primary">Procesar Pago</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+  
+  <!-- PWA: Registro básico del Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => console.log('Service Worker registrado con éxito:', registration.scope))
+          .catch(error => console.log('Fallo al registrar el Service Worker:', error));
+      });
+    }
+  </script>
+</body>
+
+</html>
