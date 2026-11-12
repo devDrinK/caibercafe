@@ -28,31 +28,30 @@
     <i class="fa-solid fa-circle-check"></i> <span id="toast-text">¡Reserva procesada con éxito!</span>
   </div>
 
-  <!-- NAVBAR / BARRA SUPERIOR UI (#1) -->
-  <nav class="navbar">
+<nav class="navbar">
     <div class="logo">
       <i class="fa-solid fa-gamepad"></i> PA QUE<span>JUEGUES</span>
     </div>
-    <!-- Botón Hamburguesa para Móvil -->
+
     <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
       <i class="fa-solid fa-bars"></i>
     </button>
-    <!-- Pestañas de Navegación de Pantalla Única -->
+
     <ul class="nav-links" id="nav-links">
       <li><a href="#" class="nav-tab active" data-target="view-inicio">Inicio</a></li>
       <li><a href="#" class="nav-tab" data-target="view-catalogo">Catálogo</a></li>
       <li><a href="#" class="nav-tab" data-target="view-terminal">Terminal de Reserva</a></li>
     </ul>
-        <!-- BOTÓN INSTALAR PWA -->
-    <button id="btn-instalar-pwa" class="btn-instalar-pwa" style="display: none;">
-      <i class="fa-solid fa-download"></i> Instalar App
-    </button>
-    
-    <div class="nav-status">
-      <span class="status-dot"></span> <span>Online</span>
-    </div>
-    <div class="nav-status">
-      <span class="status-dot"></span> <span>Online</span>
+
+    <div class="nav-right">
+      <!-- Botón instalar: SOLO aparece cuando la PWA es instalable -->
+      <button id="btn-instalar-pwa" class="btn-instalar-pwa" style="display: none;">
+        <i class="fa-solid fa-download"></i> <span>Instalar</span>
+      </button>
+      <!-- Status único -->
+      <div class="nav-status">
+        <span class="status-dot"></span> <span>Online</span>
+      </div>
     </div>
   </nav>
 
