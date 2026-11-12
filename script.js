@@ -11,38 +11,62 @@ $(document).ready(function() {
     'pc': '#ff0055'
   };
 
-    // PWA: CAPTURAR EVENTO DE INSTALACIÓN
-  let deferredPrompt;
+// ============================================================
+  // PWA: INSTALACIÓN CON DIAGNÓSTICO
+  // ============================================================
+  let deferredPrompt = null;
   const btnInstalar = $('#btn-instalar-pwa');
 
+  // 1. Verificar que el Service Worker esté registrado
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(registrations => {
+      if (registrations.length === 0) {
+        console.warn('⚠️ Service Worker NO registrado. La PWA no funcionará.');
+      } else {
+        console.log('✅ Service Worker activo:', registrations[0].scope);
+      }
+    });
+  } else {
+    console.error('❌ Este navegador no soporta Service Workers.');
+  }
+
+  // 2. Capturar el evento de instalación
   window.addEventListener('beforeinstallprompt', (e) => {
+    console.log('✅ beforeinstallprompt disparado - PWA instalable');
     e.preventDefault();
     deferredPrompt = e;
     btnInstalar.fadeIn(300);
   });
 
-  btnInstalar.on('click', async () => {
-    if (!deferredPrompt) return;
-    
+  // 3. Click en el botón instalar
+  btnInstalar.on('click', async function() {
+    if (!deferredPrompt) {
+      alert('La app ya está instalada o tu navegador no soporta instalación.');
+      return;
+    }
+
     deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
-    
+    console.log('Respuesta del usuario:', outcome);
+
     if (outcome === 'accepted') {
-      console.log('PWA instalada');
       btnInstalar.fadeOut(300);
-    } else {
-      console.log('Usuario canceló instalación');
     }
-    
     deferredPrompt = null;
   });
 
-  // Ocultar botón si ya está instalada
+  // 4. Si ya está instalada, ocultar botón
   window.addEventListener('appinstalled', () => {
+    console.log('✅ PWA instalada correctamente');
     btnInstalar.fadeOut(300);
     deferredPrompt = null;
   });
 
+  // 5. Si el usuario ya tiene la app en modo standalone, ocultar botón
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    btnInstalar.hide();
+    console.log('ℹ️ App ya abierta en modo standalone');
+  }
   // 1. CARGA DE DATOS CON AJAX
   $.ajax({
     url: 'data.json',
