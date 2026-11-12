@@ -815,3 +815,61 @@ img[loading="lazy"]:not([src=""]) {
     font-size: 0.75rem;
   }
 }
+/* NAVBAR RIGHT: Contenedor del botón instalar + status */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* BOTÓN INSTALAR PWA */
+.btn-instalar-pwa {
+  background: var(--gradient-theme);
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+.btn-instalar-pwa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px var(--accent-glow);
+}
+
+/* RESPONSIVE NAVBAR */
+@media (max-width: 992px) {
+  .nav-right {
+    order: 3;
+    margin-left: auto;
+    gap: 8px;
+  }
+  .btn-instalar-pwa span {
+    display: none; /* En móvil solo el ícono */
+  }
+  .btn-instalar-pwa {
+    padding: 8px 10px;
+  }
+  .nav-status span:last-child {
+    display: none; /* Oculta el texto "Online" en móvil para ahorrar espacio */
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    font-size: 1rem;
+  }
+  .nav-right {
+    gap: 6px;
+  }
+}
