@@ -16,12 +16,14 @@
 
 body, html {
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   font-family: 'Rajdhani', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-color);
+  scroll-padding-bottom: 80px;
 }
 
 /* ==========================================================================
@@ -189,6 +191,7 @@ h1, h2, h3, h4, .logo, .sidebar-title, button {
   margin-top: 80px;
   padding: 10px 30px 30px 15px;
   min-height: calc(100vh - 100px);
+  min-height: calc(100dvh - 100px);
   position: relative;
   box-sizing: border-box;
   display: flex;
@@ -873,3 +876,179 @@ img[loading="lazy"]:not([src=""]) {
     gap: 6px;
   }
 }
+
+/* ==========================================================================
+   RESPONSIVIDAD UI MÓVIL (PWA) Y ACCESIBILIDAD TÁCTIL
+   ========================================================================== */
+
+/* Teclado virtual: Evitar barras fijas inferiores que tapen inputs activos */
+body:has(input:focus, textarea:focus, select:focus) .barra-fija-inferior,
+body:has(input:focus, textarea:focus, select:focus) [class*="bottom-bar"],
+body:has(input:focus, textarea:focus, select:focus) [class*="fixed-bottom"] {
+  display: none !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  scroll-margin-bottom: 90px;
+}
+
+/* Áreas táctiles: min-width: 44px, min-height: 44px y separación mínima de 8px */
+button,
+.btn-tactil,
+.btn-theme,
+.btn-aforo,
+.btn-submit,
+.btn-secondary,
+.btn-primary,
+.btn-x,
+.carousel-btn,
+.nav-toggle,
+.btn-instalar-pwa {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Separación mínima de 8px en contenedores interactivos */
+.sidebar-themes,
+.nav-links,
+.aforo-selector,
+.plan-cards-selector,
+.modal-footer,
+.cola-karaoke {
+  gap: 8px;
+}
+
+button + button,
+.btn-tactil + .btn-tactil {
+  margin-left: 8px;
+}
+
+/* Textos largos: min-width: 0 en hijos Flex y text-overflow: ellipsis */
+.titulo-truncado,
+.flex-truncate {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Modo landscape: compactar cabeceras */
+@media (orientation: landscape) and (max-height: 500px) {
+  .navbar {
+    height: 46px;
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 0.9rem;
+  }
+
+  .sidebar-themes {
+    top: 52px;
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .viewport-container {
+    margin-top: 52px;
+    padding: 8px 16px 20px 16px;
+  }
+
+  .catalog-header {
+    margin-bottom: 10px;
+  }
+
+  .catalog-header h2,
+  .hero-info h1,
+  .ui-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  .header-subtitle,
+  .hero-info p {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .hero-box-single {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .hero-image-frame {
+    max-height: 140px;
+  }
+}
+
+/* ==========================================================================
+   MÓDULO DE GESTIÓN DE TURNOS / EQUIPOS (CIBERCAFÉ)
+   ========================================================================== */
+.cola-equipos,
+.cola-karaoke {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+}
+
+.fila-equipo,
+.fila-cancion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.fila-equipo:hover,
+.fila-cancion:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.fila-equipo .titulo-truncado,
+.fila-cancion .titulo-truncado {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.btn-tactil {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  touch-action: manipulation;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.btn-quitar {
+  background: rgba(255, 0, 85, 0.15);
+  border: 1px solid rgba(255, 0, 85, 0.4);
+  color: #ff3366;
+  flex-shrink: 0;
+}
+
+.btn-quitar:hover {
+  background: rgba(255, 0, 85, 0.35);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
+}
+

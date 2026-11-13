@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
   <title>Pa Que Juegues Gaming Center - Terminal Única</title>
   
   <!-- PWA: Meta etiquetas esenciales -->
@@ -41,6 +41,7 @@
       <li><a href="#" class="nav-tab active" data-target="view-inicio">Inicio</a></li>
       <li><a href="#" class="nav-tab" data-target="view-catalogo">Catálogo</a></li>
       <li><a href="#" class="nav-tab" data-target="view-terminal">Terminal de Reserva</a></li>
+      <li><a href="#" class="nav-tab" data-target="view-equipos">Gestión de Equipos</a></li>
     </ul>
 
     <div class="nav-right">
@@ -191,6 +192,31 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: MÓDULO DE GESTIÓN DE TURNOS / EQUIPOS (CIBERCAFÉ) -->
+    <section id="view-equipos" class="app-view">
+      <div class="section-container-single">
+        <div class="catalog-header">
+          <h2><i class="fa-solid fa-desktop"></i> Control de Equipos y Cabinas</h2>
+          <span class="header-subtitle">Monitoreo en tiempo real de sesiones activas, turnos y alquiler</span>
+        </div>
+
+        <div class="ui-box" style="max-width: 650px; margin: 0 auto; width: 100%;">
+          <form id="form-equipos" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+            <input type="text" id="input-equipo-nombre" class="form-input" placeholder="Equipo / Cabina (ej: PC-01 VIP)" required style="flex: 1 1 180px; min-width: 0;">
+            <input type="text" id="input-usuario-equipo" class="form-input" placeholder="Usuario / Cliente" required style="flex: 1 1 180px; min-width: 0;">
+            <input type="text" id="input-tiempo-equipo" class="form-input" placeholder="Tiempo (ej: 2 Horas)" required style="flex: 1 1 120px; min-width: 0;">
+            <button type="submit" class="btn-submit btn-tactil" id="btn-asignar-equipo" style="flex: 1 1 100%; height: 46px; margin: 0;">
+              <i class="fa-solid fa-plus"></i> Asignar Turno / Iniciar Sesión
+            </button>
+          </form>
+
+          <div class="cola-equipos cola-karaoke" id="cola-equipos">
+            <!-- Sesiones y equipos activos generados dinámicamente -->
+          </div>
+        </div>
       </div>
     </section>
 

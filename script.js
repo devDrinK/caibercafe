@@ -549,4 +549,48 @@ $(document).ready(function() {
   if (window.matchMedia('(display-mode: standalone)').matches) {
     btnInstalar.hide();
   }
+
+  // ============================================================
+  // MÓDULO DE GESTIÓN DE TURNOS / EQUIPOS (CIBERCAFÉ)
+  // ============================================================
+  function agregarSesionEquipo(equipo, usuario, tiempo) {
+    if (!equipo || !usuario) return;
+
+    const textoDetalle = `${equipo.trim()} — ${usuario.trim()} (${tiempo ? tiempo.trim() : 'Tiempo libre'})`;
+
+    // Sanitizar entradas usando .text() al crear elementos dinámicos (evita XSS)
+    const $fila = $('<div>').addClass('fila-equipo fila-cancion');
+    const $titulo = $('<span>').addClass('titulo-truncado').text(textoDetalle);
+    const $btnQuitar = $('<button>')
+      .addClass('btn-tactil btn-quitar')
+      .text('Liberar')
+      .attr('title', 'Finalizar turno y liberar equipo');
+
+    $fila.append($titulo, $btnQuitar);
+    $('#cola-equipos, #cola-karaoke').append($fila);
+  }
+
+  // Delegación de eventos por Event Bubbling (.on('click', '.btn-quitar', ...) con $(this).closest('.fila-cancion').remove())
+  $('#cola-equipos, #cola-karaoke').on('click', '.btn-quitar', function() {
+    $(this).closest('.fila-cancion').remove();
+  });
+
+  $('#form-equipos').on('submit', function(e) {
+    e.preventDefault();
+    const $equipo = $('#input-equipo-nombre');
+    const $usuario = $('#input-usuario-equipo');
+    const $tiempo = $('#input-tiempo-equipo');
+
+    if ($equipo.val() && $usuario.val()) {
+      agregarSesionEquipo($equipo.val(), $usuario.val(), $tiempo.val());
+      $equipo.val('');
+      $usuario.val('');
+      $tiempo.val('');
+    }
+  });
+
+  // Equipos/Turnos iniciales en uso en el cibercafé
+  agregarSesionEquipo('PC-01 Gamer Ultra', 'Alex_Gamer99', '2 Horas');
+  agregarSesionEquipo('Consola PS5 #02 (VIP)', 'Carlos M.', '1.5 Horas');
+  agregarSesionEquipo('Cabina PC-04 (LAN)', 'GamerTeam_Alpha', '3 Horas');
 });
